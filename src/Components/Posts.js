@@ -4,7 +4,7 @@ import { Post } from "../Utils/Links";
 import styled from "styled-components";
 const Posts = () => {
   return (
-    <div className="blue-bg">
+    <Blue_bg>
       <Wrapper>
         <p>Recent Posts</p>
         <Grid>
@@ -13,7 +13,7 @@ const Posts = () => {
           })}
         </Grid>
       </Wrapper>
-    </div>
+    </Blue_bg>
   );
 };
 
@@ -25,11 +25,21 @@ const Wrapper = styled.div`
     font-size: large;
   }
 `;
+const Blue_bg = styled.div`
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #edf7fa;
+`;
 const Grid = styled.div`
   height: auto;
   display: grid;
   justify-content: space-around;
   grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
   grid-gap: 60px;
+  @media only screen and (max-width: 700px) {
+    .blue-bg {
+      margin-top: 10px;
+    }
+  }
 `;
 export default Posts;
