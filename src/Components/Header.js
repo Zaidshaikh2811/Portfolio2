@@ -54,7 +54,7 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const Wrapper = styled.div`
-  margin-top: 10px;
+  margin: 10px 0px;
   width: 95vw;
   display: flex;
   flex-direction: row;
