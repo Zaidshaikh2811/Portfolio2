@@ -2,11 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import { links } from "../Utils/Links";
 import { NavLink, Outlet } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 const Header = () => {
+  const [isHamburgerActive, setIsHamburgerActive] = useState(true);
+
+  const handleHamburgerClick = () => {
+    setIsHamburgerActive(!isHamburgerActive);
+  };
   return (
     <>
-      <Wrapper>
+      <Wrapper isHamburgerActive={isHamburgerActive}>
         <div className="link">
           {links.map((value) => {
             return (
@@ -21,7 +26,7 @@ const Header = () => {
             );
           })}
         </div>
-        <div className="hamburger">
+        <div className="hamburger" onClick={handleHamburgerClick}>
           {/* <GiHamburgerMenu /> */}
           <svg
             stroke="currentColor"
@@ -44,12 +49,10 @@ const Header = () => {
 const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-size: x-large;
-  color: black; /* You can set the color to your desired value */
+  color: black;
   margin: 10px 15px; /* Adjust the margin as needed */
-  .active {
-    color: green;
-  }
 `;
+
 const Wrapper = styled.div`
   margin-top: 10px;
   width: 95vw;
@@ -57,17 +60,18 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: end;
   .hamburger {
-    display: none;
+    display: block;
+    cursor: pointer;
+
+    svg {
+      font-size: ${(props) => (props.isHamburgerActive ? "2rem" : "1em")};
+      transition: font-size 0.3s ease; /* Add a smooth transition effect */
+    }
   }
+
   @media only screen and (max-width: 700px) {
     .link {
-      display: none;
-    }
-    .hamburger {
-      display: block;
-      svg {
-        font-size: 2rem;
-      }
+      display: ${(props) => (props.isHamburgerActive ? "none" : "block")};
     }
   }
 `;

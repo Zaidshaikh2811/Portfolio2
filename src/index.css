@@ -28,6 +28,10 @@ body {
   background-color: #ff6464;
   color: white;
 }
+.active {
+  color: #ff6464;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
