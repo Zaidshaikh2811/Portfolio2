@@ -56,6 +56,7 @@ const StyledNavLink = styled(NavLink)`
 const Wrapper = styled.div`
   margin: 10px 0px;
   width: 95vw;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: end;
