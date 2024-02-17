@@ -65,6 +65,9 @@ const Wrapper = styled.div`
     }
     .hamburger {
       display: block;
+      svg {
+        font-size: 2rem;
+      }
     }
   }
 `;
