@@ -36,6 +36,9 @@ const Wrapper = styled.div`
   .details {
     margin: auto 0px;
     gap: 20px;
+    h1 {
+      font-size: xx-large;
+    }
   }
   .image {
     display: flex;
